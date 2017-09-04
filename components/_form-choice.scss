@@ -1,4 +1,5 @@
 @import '../settings/form';
+@import '~sass-svg-uri/svg-uri';
 
 .form-choice {
     position: relative;
@@ -77,13 +78,13 @@
 
 .form-choice--checkbox {
     .form-choice__input:checked ~ .form-choice__label:before {
-        background-image: $form-choice-checkbox-icon;
+        background-image: svg-uri($form-choice-checkbox-icon);
     }
 }
 
 .form-choice--radio {
     .form-choice__input:checked ~ .form-choice__label:before {
-        background-image: $form-choice-radio-icon;
+        background-image: svg-uri($form-choice-radio-icon);
     }
 
     .form-choice__label:before {

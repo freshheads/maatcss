@@ -1,8 +1,6 @@
-@import '~sass-svg-uri/svg-uri';
-
 $form-text-muted:                   #636c72 !default;
 $form-group-error-color:            #d9534f !default;
-$form-group-error-icon:             svg-uri('<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#{$form-group-error-color}" d="M14.8 12l3.6-3.6c.8-.8.8-2 0-2.8-.8-.8-2-.8-2.8 0L12 9.2 8.4 5.6c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8L9.2 12l-3.6 3.6c-.8.8-.8 2 0 2.8.4.4.9.6 1.4.6s1-.2 1.4-.6l3.6-3.6 3.6 3.6c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8L14.8 12z"/></svg>') !default; /* stylelint-disable-line */
+$form-group-error-icon:             '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path fill="#{$form-group-error-color}" d="M14.8 12l3.6-3.6c.8-.8.8-2 0-2.8-.8-.8-2-.8-2.8 0L12 9.2 8.4 5.6c-.8-.8-2-.8-2.8 0-.8.8-.8 2 0 2.8L9.2 12l-3.6 3.6c-.8.8-.8 2 0 2.8.4.4.9.6 1.4.6s1-.2 1.4-.6l3.6-3.6 3.6 3.6c.4.4.9.6 1.4.6s1-.2 1.4-.6c.8-.8.8-2 0-2.8L14.8 12z"/></svg>' !default; /* stylelint-disable-line */
 $form-field-color:                  #464a4c !default;
 $form-field-focus-border-color:     #5cb3fd !default;
 $form-field-border-radius:          0.25rem !default;
@@ -17,14 +15,14 @@ $form-field-font-family:            inherit !default;
 $form-choice-bg-color:              #0275d8 !default;
 $form-choice-border-color:          $form-field-border-color !default;
 $form-choice-icon-color:            #fff !default;
-$form-choice-checkbox-icon:         svg-uri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path clip-rule="evenodd" d="M21.652 3.21c-.293-.294-.77-.294-1.06 0L9.41 14.34c-.293.297-.77.297-1.062 0l-4.9-4.99c-.144-.147-.334-.22-.525-.22-.193-.002-.39.07-.536.22L.222 11.298c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.297.77.777 1.062 1.07l2.124 2.142c.29.293.768.293 1.06 0l14.367-14.34c.293-.294.293-.777 0-1.07l-2.125-2.14z" fill-rule="evenodd" fill="#{$form-choice-icon-color}"/></svg>') !default; /* stylelint-disable-line */
-$form-choice-radio-icon:            svg-uri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3"><circle cx="1.5" cy="1.5" r="1.5" fill="#{$form-choice-icon-color}"/></svg>') !default; /* stylelint-disable-line */
+$form-choice-checkbox-icon:         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path clip-rule="evenodd" d="M21.652 3.21c-.293-.294-.77-.294-1.06 0L9.41 14.34c-.293.297-.77.297-1.062 0l-4.9-4.99c-.144-.147-.334-.22-.525-.22-.193-.002-.39.07-.536.22L.222 11.298c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.297.77.777 1.062 1.07l2.124 2.142c.29.293.768.293 1.06 0l14.367-14.34c.293-.294.293-.777 0-1.07l-2.125-2.14z" fill-rule="evenodd" fill="#{$form-choice-icon-color}"/></svg>' !default; /* stylelint-disable-line */
+$form-choice-radio-icon:            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3"><circle cx="1.5" cy="1.5" r="1.5" fill="#{$form-choice-icon-color}"/></svg>' !default; /* stylelint-disable-line */
 $form-choice-size:                  1rem !default;
 $form-choice-focus-shadow:          inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6) !default;
 $form-choice-font-family:           inherit !default;
 
 $form-select-icon-color:            #333 !default;
-$form-select-icon:                  svg-uri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#{$form-select-icon-color}" d="M18 21L30.3 9.2c.3-.3.8-.3 1.1 0l2.2 2.1c.3.3.3.8 0 1.1l-15 14.4c-.2.1-.4.2-.6.2-.2 0-.4-.1-.6-.2l-15-14.4c-.3-.3-.3-.8 0-1.1l2.2-2.1c.3-.3.8-.3 1.1 0L18 21z"/></svg>') !default; /* stylelint-disable-line */
+$form-select-icon:                  '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#{$form-select-icon-color}" d="M18 21L30.3 9.2c.3-.3.8-.3 1.1 0l2.2 2.1c.3.3.3.8 0 1.1l-15 14.4c-.2.1-.4.2-.6.2-.2 0-.4-.1-.6-.2l-15-14.4c-.3-.3-.3-.8 0-1.1l2.2-2.1c.3-.3.8-.3 1.1 0L18 21z"/></svg>' !default; /* stylelint-disable-line */
 $form-select-bg-size:               16px 16px !default;
 $form-select-border-color:          $form-field-border-color !default;
 $form-select-bg-color:              $form-field-bg-color !default;

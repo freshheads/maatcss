@@ -1,4 +1,5 @@
 @import '../settings/form';
+@import '~sass-svg-uri/svg-uri';
 
 select {
     &:focus::-ms-value {
@@ -25,7 +26,7 @@ input[type='radio'] {
         .form__field {
             padding-right: 2.25rem;
             border-color: $form-group-error-color;
-            background-image: $form-group-error-icon;
+            background-image: svg-uri($form-group-error-icon);
             background-repeat: no-repeat;
             background-position: center right 0.563rem;
             background-size: 1.125rem 1.125rem;
