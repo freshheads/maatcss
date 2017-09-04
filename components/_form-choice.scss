@@ -5,12 +5,17 @@
     display: block;
     margin-bottom: 0.5rem;
 
+    &:last-child {
+        margin-bottom: 0;
+    }
+
     .form--inline & {
         margin-bottom: 0;
     }
 
     .form-choice-list--inline & {
         display: inline-block;
+        margin-bottom: 0;
         margin-right: 0.5rem;
     }
 }
