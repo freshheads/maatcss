@@ -12,6 +12,7 @@ $form-field-bg-color:               #fff !default;
 $form-field-bg-disabled:            #eceeef !default;
 $form-field-placeholder-color:      $form-text-muted !default;
 $form-field-padding:                0.625rem 0.75rem !default;
+$form-field-font-family:            inherit !default;
 
 $form-choice-bg-color:              #0275d8 !default;
 $form-choice-border-color:          $form-field-border-color !default;
@@ -20,6 +21,7 @@ $form-choice-checkbox-icon:         svg-uri('<svg xmlns="http://www.w3.org/2000/
 $form-choice-radio-icon:            svg-uri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3"><circle cx="1.5" cy="1.5" r="1.5" fill="#{$form-choice-icon-color}"/></svg>') !default; /* stylelint-disable-line */
 $form-choice-size:                  1rem !default;
 $form-choice-focus-shadow:          inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6) !default;
+$form-choice-font-family:           inherit !default;
 
 $form-select-icon-color:            #333 !default;
 $form-select-icon:                  svg-uri('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#{$form-select-icon-color}" d="M18 21L30.3 9.2c.3-.3.8-.3 1.1 0l2.2 2.1c.3.3.3.8 0 1.1l-15 14.4c-.2.1-.4.2-.6.2-.2 0-.4-.1-.6-.2l-15-14.4c-.3-.3-.3-.8 0-1.1l2.2-2.1c.3-.3.8-.3 1.1 0L18 21z"/></svg>') !default; /* stylelint-disable-line */
@@ -28,3 +30,4 @@ $form-select-border-color:          $form-field-border-color !default;
 $form-select-bg-color:              $form-field-bg-color !default;
 $form-select-color:                 $form-field-color !default;
 $form-select-padding:               0.625rem 2.25rem 0.625rem 0.75rem !default;
+$form-select-font-family:           inherit !default;

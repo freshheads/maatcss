@@ -1,4 +1,5 @@
 $button-padding: 0.625rem 0.75rem !default;
+$button-font-family: inherit !default;
 
 .button {
     display: inline-block;
@@ -7,7 +8,7 @@ $button-padding: 0.625rem 0.75rem !default;
     padding: $button-padding;
     border: 1px solid transparent;
     background-color: transparent;
-    font: inherit;
+    font-family: $button-font-family;
     text-align: center;
     text-decoration: none;
     cursor: pointer;

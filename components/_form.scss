@@ -46,6 +46,7 @@ input[type='radio'] {
     background-color: $form-field-bg-color;
     background-image: none;
     background-clip: padding-box;
+    font-family: $form-field-font-family;
     font-size: 1rem;
     line-height: $base-line-height;
     color: $form-field-color;
