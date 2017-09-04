@@ -2,6 +2,7 @@
 @import '../settings/layout';
 
 .container {
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
 
@@ -14,10 +15,6 @@
     }
 }
 
-.container--fluid {
-    width: 100%;
-}
-
 // For each breakpoint, define the width of the container in a media query.
 // Except for if the container is 0px and if the container is larger than the max-width set in the settings.
 // Or when the container is fluid
@@ -25,7 +22,7 @@
     @if ($container-width != 0px and ($container-width/1px) <= ($layout-container-max-width/1px)) { /* stylelint-disable-line */
         @include mq($from: $breakpoint-name) {
             .container:not(.container--fluid) {
-                width: $container-width;
+                max-width: $container-width;
             }
         }
     }
