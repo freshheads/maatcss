@@ -18,7 +18,7 @@ $form-choice-icon-color:            #fff !default;
 $form-choice-checkbox-icon:         '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="24" width="24"><path clip-rule="evenodd" d="M21.652 3.21c-.293-.294-.77-.294-1.06 0L9.41 14.34c-.293.297-.77.297-1.062 0l-4.9-4.99c-.144-.147-.334-.22-.525-.22-.193-.002-.39.07-.536.22L.222 11.298c-.144.148-.222.333-.222.526 0 .194.078.397.223.544l4.94 5.184c.292.297.77.777 1.062 1.07l2.124 2.142c.29.293.768.293 1.06 0l14.367-14.34c.293-.294.293-.777 0-1.07l-2.125-2.14z" fill-rule="evenodd" fill="#{$form-choice-icon-color}"/></svg>' !default; /* stylelint-disable-line */
 $form-choice-radio-icon:            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3 3"><circle cx="1.5" cy="1.5" r="1.5" fill="#{$form-choice-icon-color}"/></svg>' !default; /* stylelint-disable-line */
 $form-choice-size:                  1rem !default;
-$form-choice-focus-shadow:          inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6) !default;
+$form-choice-focus-shadow:          inset 0 1px 1px rgba(#000, 0.075), 0 0 8px rgba(#66afe9, 0.6) !default;
 $form-choice-font-family:           inherit !default;
 
 $form-select-icon-color:            #333 !default;
