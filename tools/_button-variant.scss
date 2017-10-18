@@ -1,10 +1,18 @@
-@mixin button-variant($color, $background) {
+@mixin button-variant($color, $background, $hoverColor: null, $hoverBackground: null) {
     color: $color;
     background-color: $background;
 
+    @if ($hoverColor == null) {
+        $hoverColor: $color;
+    }
+
+    @if ($hoverBackground == null) {
+        $hoverBackground: mix(#000, $background, 10%);
+    }
+
     &:hover,
     &:focus {
-        color: $color;
-        background-color: mix(#000, $background, 10%);
+        color: $hoverColor;
+        background-color: $hoverBackground;
     }
 }
