@@ -9,8 +9,8 @@
     // set container padding based on gutter by breakpoint
     @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
         @include mq($from: $breakpoint-name) {
-            padding-left: ($gutter-width / 2);
-            padding-right: ($gutter-width / 2);
+            padding-left: $gutter-width;
+            padding-right: $gutter-width;
         }
     }
 }
