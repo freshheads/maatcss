@@ -43,8 +43,7 @@ Maat.css follows a specific directory structure, which you hopefully follow as w
 
 ### Module specific guidelines
 
-Most options are explained in the index.html which can be viewed by starting the web server.
-The setting variables should be clear, but be free to add comments in the code.
+[Maat.css documentation](https://freshheads.github.io/maatcss-docs/)
 
 ## Development 
 
