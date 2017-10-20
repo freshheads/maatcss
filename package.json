@@ -1,7 +1,5 @@
 {
-  "name": "fh-style-standards",
-  "version": "2.0.0",
-  "private": true,
+  "name": "maatcss",
   "description": "Extensible, scalable, Sass-based modules that can be used as starting point for UI projects",
   "engines": {
     "node": ">=6.0.0",
@@ -15,19 +13,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/freshheads/style-standards.git"
+    "url": "https://github.com/freshheads/maatcss.git"
   },
   "keywords": [
-    "style-standards",
+    "maatcss",
+    "maat-css",
     "sass",
+    "freshheads",
+    "bootstrap",
+    "setup",
     "css"
   ],
   "author": "Freshheads",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/freshheads/style-standards/issues"
+    "url": "https://github.com/freshheads/maatcss/issues"
   },
-  "homepage": "https://github.com/freshheads/style-standards#readme",
+  "homepage": "https://github.com/freshheads/maatcss#readme",
   "dependencies": {
     "normalize.css": "^6.0.0",
     "sass-mq": "^3.3.2",

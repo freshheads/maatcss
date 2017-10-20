@@ -1,8 +1,8 @@
-# FH STYLE STANDARDS
+# Maatcss
 
 **Extensible, scalable, Sass-based modules that can be used as starting point for UI projects**
 
-The Freshheads Style Standards do not provide you with UI and design out of the box, instead, it provides you with a solid architectural baseline upon which to complete your own work.
+The maatcss modules do not provide you with UI and design out of the box, instead, it provides you with a solid architectural baseline upon which to complete your own work.
 Every module can be replaced, ignored or extended so it doesn't limit you when new strategies or technologies arise.
 
 ## Features
@@ -16,22 +16,22 @@ Every module can be replaced, ignored or extended so it doesn't limit you when n
 
 ## Installation
 
-Add the fh-style-standards package to your app package.json. Using `semver` in Git URLs was introduced in NPM5, you can use the original tag notation (e.g. style-standards#v2.0.0) on older versions of NPM.
+Add the maatcss package to your package.json.
 
-```
-"fh-style-standards": "git+ssh://git@github.com/freshheads/style-standards#semver:^2.0.0",
+```bash
+npm install maatcss
 ```
 
 ## Usage
 
-Once you have the style standards in your project you first need to copy the example.main.scss file into your project directory structure and rename this to your application entry point.
-This file accesses the style standard modules, and you can extend it with your own UI component modules.
+Once you have the maatcss in your project you first need to copy the example.main.scss file into your project directory structure and rename this to your application entry point.
+This file accesses the maatcss modules, and you can extend it with your own UI component modules.
 
-The imports in this file need to be changed to the location of the fh-style-standards node module. e.g. `'~fh-style-standards/generic/toplevel'`
+The imports in this file need to be changed to the location of the maatcss node module. e.g. `'~maatcss/generic/toplevel'` when using Webpack.
 
 ### Directory structure guidelines
 
-The FH Style Standards follow a specific directory structure, which you hopefully follow as well in your own CSS directory:
+Maatcss follows a specific directory structure, which you hopefully follow as well in your own CSS directory:
 
 * `/settings`: Global variables, site-wide settings, transcending component settings.
 * `/tools`: Site-wide mixins and functions.
@@ -48,7 +48,7 @@ The setting variables should be clear, but be free to add comments in the code.
 
 ## Development 
 
-Start a local server using webpack 2 , webpack-dev-server and auto refresh :)
+Start a local server using webpack >=2, webpack-dev-server and auto refresh :)
 
 ```
 npm install
