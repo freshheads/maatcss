@@ -51,5 +51,6 @@
     "stylelint-order": "^0.4.3",
     "webpack": "^2.3.3",
     "webpack-dev-server": "^2.4.2"
-  }
+  },
+  "version": "1.0.0-rc.1"
 }
