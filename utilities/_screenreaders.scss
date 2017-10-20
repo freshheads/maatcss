@@ -1,0 +1,5 @@
+@import '../tools/screenreaders';
+
+.sr-only {
+    @include sr-only();
+}

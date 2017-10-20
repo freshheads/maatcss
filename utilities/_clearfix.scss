@@ -1,0 +1,5 @@
+@import '../tools/clearfix';
+
+.clearfix {
+    @include clearfix;
+}

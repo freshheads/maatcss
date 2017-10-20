@@ -1,0 +1,14 @@
+$button-padding: 0.625rem 0.75rem !default;
+
+.button {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0;
+    padding: $button-padding;
+    border: 1px solid transparent;
+    background-color: transparent;
+    font: inherit;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}

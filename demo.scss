@@ -1,0 +1,34 @@
+/**
+ * Only used for demo purposes, not part of the framework
+ */
+.block {
+    width: 100%;
+    margin-bottom: 40px;
+    padding: 15px;
+    border-radius: 3px;
+    background-color: #f5f5f3;
+
+    > * {
+        margin-bottom: 0;
+    }
+
+    .block {
+        background-color: #edebe7;
+    }
+}
+
+// Inline and block code styles
+pre {
+    font-family: 'Courier 10 Pitch', 'Courier', monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre-wrap;
+}
+
+code {
+    font-family: 'Monaco', 'Consolas', 'Andale Mono', 'DejaVu Sans Mono', monospace;
+    font-size: 95%;
+    line-height: 140%;
+    white-space: pre-wrap;
+    background: #f7f7f9;
+}

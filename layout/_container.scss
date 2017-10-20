@@ -1,0 +1,32 @@
+@import '../settings/breakpoints';
+@import '../settings/layout';
+
+.container,
+.container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+
+    // set container padding based on gutter by breakpoint
+    @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
+        @include mq($from: $breakpoint-name) {
+            padding-left: ($gutter-width / 2);
+            padding-right: ($gutter-width / 2);
+        }
+    }
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+// For each breakpoint, define the width of the container in a media query.
+// Except for if the container is 0px and if the container is larger than the max-width set in the settings.
+@each $breakpoint-name, $container-width in $breakpoints {
+    @if ($container-width != 0px and ($container-width/1px) <= ($layout-container-max-width/1px)) { /* stylelint-disable-line */
+        @include mq($from: $breakpoint-name) {
+            .container {
+                width: $container-width;
+            }
+        }
+    }
+}

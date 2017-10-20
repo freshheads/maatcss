@@ -1,0 +1,103 @@
+@import '../settings/form';
+
+select {
+    &:focus::-ms-value {
+        color: $form-field-color;
+        background-color: #fff;
+    }
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+    &:disabled {
+        cursor: not-allowed;
+    }
+}
+
+.form__group {
+    margin-bottom: 1rem;
+
+    &.has-error {
+        .form__label {
+            color: $form-group-error-color;
+        }
+
+        .form__field {
+            padding-right: 2.25rem;
+            border-color: $form-group-error-color;
+            background-image: $form-group-error-icon;
+            background-repeat: no-repeat;
+            background-position: center right 0.563rem;
+            background-size: 1.125rem 1.125rem;
+
+            &:focus {
+                box-shadow: $form-field-box-shadow, 0 0 6px lighten($form-group-error-color, 20%);
+            }
+        }
+    }
+}
+
+.form__field {
+    display: block;
+    width: 100%;
+    padding: $form-field-padding;
+    border: 1px solid $form-field-border-color;
+    border-radius: $form-field-border-radius;
+    background-color: $form-field-bg-color;
+    background-image: none;
+    background-clip: padding-box;
+    font-size: 1rem;
+    line-height: $base-line-height;
+    color: $form-field-color;
+    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+
+    &:focus {
+        border-color: $form-field-focus-border-color;
+        outline: 0;
+    }
+
+    &::placeholder {
+        color: $form-field-placeholder-color;
+        opacity: 1;
+    }
+
+    &:disabled,
+    &[readonly] {
+        background-color: $form-field-bg-disabled;
+        opacity: 1;
+    }
+}
+
+.form__file {
+    display: block;
+}
+
+.form__text {
+    display: block;
+    margin-top: 0.25rem;
+    color: $form-text-muted;
+}
+
+.form__error-message {
+    display: block;
+    margin-top: 0.25rem;
+    color: $form-group-error-color;
+}
+
+.form--inline {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+
+    > * {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    .form__label {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 0;
+    }
+}

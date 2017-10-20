@@ -1,0 +1,26 @@
+.table {
+    max-width: 100%;
+    margin-bottom: 1rem;
+
+    th,
+    td {
+        vertical-align: top;
+        padding: 12px;
+        border-top: 1px solid #eceeef;
+    }
+
+    thead th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #eceeef;
+    }
+
+    tbody + tbody {
+        border-top: 2px solid #eceeef;
+    }
+}
+
+.table--striped {
+    tbody tr:nth-of-type(odd) {
+        background-color: rgba(#000, 0.05);
+    }
+}

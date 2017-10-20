@@ -1,0 +1,7 @@
+$layout-items:                      12 !default;
+$layout-offset-items-enabled:       false !default;
+$layout-order-helpers-enabled:      false !default;
+$layout-gutter-width:               40px !default;
+$layout-flex-breakpoint:            sm !default;
+$layout-gutter-widths:              (xs: 20px, sm: 40px) !default;
+$layout-container-max-width:        map_get($breakpoints, xl) !default;

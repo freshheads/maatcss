@@ -1,0 +1,86 @@
+@import '../settings/breakpoints';
+@import '../settings/layout';
+
+.layout {
+    display: flex;
+    flex-wrap: wrap;
+
+    // compensate gutters for each breakpoint
+    @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
+        @include mq($from: $breakpoint-name) {
+            margin-left: -$gutter-width / 2;
+            margin-right: -$gutter-width / 2;
+        }
+    }
+}
+
+.layout--no-gutters {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.layout__item {
+    flex: 1 1 auto;
+    width: 100%;
+
+    @include mq($from: $layout-flex-breakpoint) {
+        flex: 1 1 0;
+    }
+
+    // fixes truncate text issue inside child elements
+    // https://css-tricks.com/flexbox-truncated-text/
+    min-width: initial;
+    max-width: 100%;
+
+    // set gutter width for each breakpoint
+    @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
+        @include mq($from: $breakpoint-name) {
+            padding-left: $gutter-width / 2;
+            padding-right: $gutter-width / 2;
+        }
+    }
+
+    .layout--no-gutters > & {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .layout--no-wrap > & {
+        flex: 1 1 0;
+    }
+
+    .layout--column-flex > & {
+        display: flex;
+    }
+
+    @each $breakpoint-name, $value in $breakpoints {
+        &[class*='layout__item--#{$breakpoint-name}'] {
+            flex: none;
+        }
+    }
+}
+
+.layout__item--flex {
+    display: flex;
+}
+
+.layout__item--grow {
+    flex: 1 0 auto;
+    width: auto;
+}
+
+.layout__item--shrink {
+    flex: 0 1 auto;
+    width: auto;
+}
+
+@each $breakpoint-name, $value in $breakpoints {
+    .layout--collapse-#{$breakpoint-name} {
+        .layout__item {
+            @include mq($until: $breakpoint-name) {
+                flex: none;
+                width: 100%;
+            }
+        }
+    }
+}

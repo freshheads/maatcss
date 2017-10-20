@@ -1,0 +1,15 @@
+@import '../settings/typography';
+@import '../settings/colors';
+
+html {
+    min-height: 100%;
+    overflow-y: scroll;
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    font-family: $base-font-family;
+}
+
+body {
+    background-color: $body-bg;
+    color: $body-color;
+}

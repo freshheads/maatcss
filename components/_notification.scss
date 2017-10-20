@@ -1,0 +1,63 @@
+$notification-success-border-color:         #d0e9c6 !default;
+$notification-success-background-color:     #dff0d8 !default;
+$notification-success-color:                #3c763d !default;
+
+$notification-info-border-color:            #bcdff1 !default;
+$notification-info-background-color:        #d9edf7 !default;
+$notification-info-color:                   #31708f !default;
+
+$notification-warning-border-color:         #faf2cc !default;
+$notification-warning-background-color:     #fcf8e3 !default;
+$notification-warning-color:                #8a6d3b !default;
+
+$notification-danger-border-color:          #ebcccc !default;
+$notification-danger-background-color:      #f2dede !default;
+$notification-danger-color:                 #a94442 !default;
+
+.notification {
+    position: relative;
+    display: flex;
+    align-content: center;
+    margin-bottom: 1rem;
+    padding: 0.75em 1.75em 0.75em 1.25em;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+
+.notification--success {
+    border-color: $notification-success-border-color;
+    background-color: $notification-success-background-color;
+    color: $notification-success-color;
+}
+
+.notification--info {
+    border-color: $notification-info-border-color;
+    background-color: $notification-info-background-color;
+    color: $notification-info-color;
+}
+
+.notification--warning {
+    border-color: $notification-warning-border-color;
+    background-color: $notification-warning-background-color;
+    color: $notification-warning-color;
+}
+
+.notification--danger {
+    border-color: $notification-danger-border-color;
+    background-color: $notification-danger-background-color;
+    color: $notification-danger-color;
+}
+
+.notification__content {
+    display: block;
+    flex: 1 1 0;
+}
+
+.notification__close {
+    flex: 0 1 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    font-size: 1.25rem;
+    line-height: 0;
+}

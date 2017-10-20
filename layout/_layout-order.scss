@@ -1,0 +1,17 @@
+@import '../settings/breakpoints';
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+    @include mq($from: $breakpoint-name) {
+        .layout--order-#{$breakpoint-name}-reverse {
+            flex-direction: row-reverse;
+        }
+
+        .layout__item--order-#{$breakpoint-name}-first {
+            order: -1;
+        }
+
+        .layout__item--order-#{$breakpoint-name}-last {
+            order: 1;
+        }
+    }
+}

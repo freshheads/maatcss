@@ -1,0 +1,86 @@
+@import '../settings/form';
+
+.form-choice {
+    position: relative;
+    display: block;
+    margin-bottom: 0.5rem;
+
+    .form--inline & {
+        margin-bottom: 0;
+    }
+
+    .form-choice-list--inline & {
+        display: inline-block;
+        margin-right: 0.5rem;
+    }
+}
+
+.form-choice__label {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    min-height: 1.5rem;
+    margin-bottom: 0;
+    cursor: pointer;
+
+    &:before {
+        content: '';
+        display: block;
+        box-sizing: content-box;
+        flex: 1 0 1rem;
+        width: $form-choice-size;
+        height: $form-choice-size;
+        margin-right: 0.5rem;
+        border: 1px solid $form-choice-border-color;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 50% 50%;
+        pointer-events: none;
+        user-select: none;
+    }
+
+    .form-choice.is-disabled & {
+        color: $form-text-muted;
+        cursor: not-allowed;
+    }
+
+    .has-error & {
+        color: $form-group-error-color;
+    }
+}
+
+.form-choice__input {
+    position: absolute;
+    z-index: -1;
+    margin: 0.25rem 0.5rem 0 -1.25rem;
+    opacity: 0;
+
+    &:checked ~ .form-choice__label:before {
+        background-color: $form-choice-bg-color;
+        color: $form-choice-icon-color;
+    }
+
+    &:focus ~ .form-choice__label {
+        &:before {
+            border: 1px solid $form-field-focus-border-color;
+            outline: 0;
+            box-shadow: $form-choice-focus-shadow;
+        }
+    }
+}
+
+.form-choice--checkbox {
+    .form-choice__input:checked ~ .form-choice__label:before {
+        background-image: $form-choice-checkbox-icon;
+    }
+}
+
+.form-choice--radio {
+    .form-choice__input:checked ~ .form-choice__label:before {
+        background-image: $form-choice-radio-icon;
+    }
+
+    .form-choice__label:before {
+        border-radius: 50%;
+    }
+}

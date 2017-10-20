@@ -1,0 +1,22 @@
+@import '../settings/breakpoints';
+@import '../settings/layout';
+
+@mixin _make-column($totalColumnCount) {
+    @for $i from 1 through $totalColumnCount {
+        &-#{$i} {
+            width: percentage($i / $totalColumnCount);
+            max-width: percentage($i / $totalColumnCount); // Needed for IE10+ and Firefox
+        }
+    }
+}
+
+/**
+ * Create column sizing helpers based on the total amount of columns
+ */
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+    @include mq($from: $breakpoint-name) {
+        .layout__item--#{$breakpoint-name} {
+            @include _make-column($layout-items);
+        }
+    }
+}
