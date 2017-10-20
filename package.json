@@ -1,5 +1,5 @@
 {
-  "name": "maatcss",
+  "name": "@freshheads/maatcss",
   "description": "Extensible, scalable, Sass-based modules that can be used as starting point for UI projects",
   "engines": {
     "node": ">=6.0.0",
