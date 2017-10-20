@@ -14,7 +14,11 @@ var sassOptions = {
 
 module.exports = {
     entry : {
-        app: [path.join(__dirname, '/example.main.scss'), path.join(__dirname, '/demo.scss')]
+        app: [path.join(__dirname, '/example.main.scss'), path.join(__dirname, '/docs.scss')]
+    },
+    output: {
+        path: path.resolve(__dirname,'docs'),
+        filename: 'app.js'
     },
     module: {
         rules: [

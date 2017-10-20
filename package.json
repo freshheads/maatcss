@@ -9,7 +9,9 @@
   "scripts": {
     "test": "npm run lint",
     "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
-    "start": "webpack-dev-server"
+    "docs": "webpack --progress --config webpack.config.js",
+    "start": "webpack-dev-server",
+    "prepublish": "npm run docs"
   },
   "repository": {
     "type": "git",
