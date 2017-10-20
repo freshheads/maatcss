@@ -4,7 +4,7 @@ set -e # Exit with nonzero exit code if anything fails
 SOURCE_BRANCH="develop"
 
 TARGET_BRANCH="master"
-TARGET_REPO="https://github.com/freshheads/maatcss-docs"
+TARGET_REPO="https://github.com/freshheads/maatcss-docs.git"
 TARGET_SSH_REPO="git@github.com:freshheads/maatcss-docs.git"
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -16,8 +16,8 @@ fi
 # Save some useful information
 SHA=`git rev-parse --verify HEAD`
 
-# Clone the existing gh-pages for this repo into out/
-# Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
+# Clone the existing master for maatcss-docs repo into out/
+# Create a new empty branch if master doesn't exist yet (should only happen on first deply)
 git clone $TARGET_REPO out
 cd out
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
