@@ -34,15 +34,16 @@ cd out
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
+# Commit the "changes", i.e. the new version.
+# The delta will show diffs between new and old versions.
+git add -A .
+
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if git diff --quiet; then
+if git diff HEAD --quiet; then
     echo "No changes to the output on this push; exiting."
     exit 0
 fi
 
-# Commit the "changes", i.e. the new version.
-# The delta will show diffs between new and old versions.
-git add -A .
 git commit -m "Deploy documentation to GitHub Pages: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
@@ -51,9 +52,9 @@ ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
 ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
 ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
 openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../maatcss_deploy.enc -out ../maatcss_deploy -d
-chmod 600 ../deploy_key
+chmod 600 ../maatcss_deploy
 eval `ssh-agent -s`
-ssh-add maatcss_deploy
+ssh-add ../maatcss_deploy
 
 # Now that we're all set up, we can push.
 git push $TARGET_SSH_REPO $TARGET_BRANCH
