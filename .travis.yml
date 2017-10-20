@@ -1,8 +1,10 @@
 language: node_js
 node_js:
   - "8"
+before_script:
+    - npm install -g webpack
 script:
-#    - npm run docs
+    - npm run docs
     - bash ./deploy-docs.sh
 env:
   global:
