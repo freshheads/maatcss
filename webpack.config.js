@@ -14,7 +14,7 @@ var sassOptions = {
 
 module.exports = {
     entry : {
-        app: [path.join(__dirname, '/example.main.scss'), path.join(__dirname, '/docs.scss')]
+        app: [path.join(__dirname, '/example.main.scss'), path.join(__dirname, '/docs.scss'), path.join(__dirname, '/docs.js')]
     },
     output: {
         path: path.resolve(__dirname,'docs'),
@@ -30,11 +30,21 @@ module.exports = {
                         loader: 'css-loader'
                     },
                     {
-                        loader: 'postcss-loader',
+                        loader: 'postcss-loader'
                     },
                     {
                         loader: 'sass-loader',
                         options: sassOptions
+                    }]
+                })
+            }, {
+                test: /\.css$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: 'style-loader',
+                    use: [{
+                        loader: 'css-loader'
+                    }, {
+                        loader: 'postcss-loader'
                     }]
                 })
             }
