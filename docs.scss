@@ -17,18 +17,16 @@
     }
 }
 
-// Inline and block code styles
-pre {
-    font-family: 'Courier 10 Pitch', 'Courier', monospace;
-    font-size: 95%;
-    line-height: 140%;
-    white-space: pre-wrap;
+header {
+    padding: 1rem;
+    background-color: #008fc2;
+    color: #fff;
+
+    h1 {
+        margin: 0;
+    }
 }
 
-code {
-    font-family: 'Monaco', 'Consolas', 'Andale Mono', 'DejaVu Sans Mono', monospace;
-    font-size: 95%;
-    line-height: 140%;
-    white-space: pre-wrap;
-    background: #f7f7f9;
+section {
+    padding: 20px 0;
 }
