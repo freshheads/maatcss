@@ -19,7 +19,7 @@ Every module can be replaced, ignored or extended so it doesn't limit you when n
 Add the maat.css package to your package.json.
 
 ```bash
-npm install maatcss
+npm install @freshheads/maatcss
 ```
 
 ## Usage
