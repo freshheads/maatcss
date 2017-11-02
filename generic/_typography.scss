@@ -11,8 +11,8 @@ h3,
 h4,
 h5,
 h6 {
-    margin-top: 0;
-    margin-bottom: 1.5rem;
+    margin-top: $heading-margin-top;
+    margin-bottom: $heading-margin-bottom;
     font-family: $heading-font-family;
     font-weight: $heading-font-weight;
     line-height: $heading-line-height;
