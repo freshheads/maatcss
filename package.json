@@ -11,7 +11,7 @@
     "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
     "docs": "webpack --progress --config webpack.config.js",
     "start": "webpack-dev-server",
-    "prepublish": "npm run docs"
+    "preversion": "npm run docs"
   },
   "repository": {
     "type": "git",
