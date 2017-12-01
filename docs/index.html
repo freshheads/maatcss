@@ -4,408 +4,488 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Maatcss</title>
+    <title>Maat.css</title>
 <link href="app.css" rel="stylesheet"></head>
 <body>
-    <div class="container">
-        <h1>Maatcss</h1>
-
-        <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-        <h2>Header Level 2</h2>
-
-        <ol>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-        </ol>
-
-        <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-        <h3>Header Level 3</h3>
-
-        <ul>
-            <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-            <li>Aliquam tincidunt mauris eu risus.</li>
-        </ul>
-
-        <hr>
-
-        <h2>Layout</h2>
-        <p>
-            The layout is based on flexbox which gives us a lot of nice features right out of the box.
-            The layout columns below with the text "auto" do not specify any widths, they just naturally space themselves equally and expand to fit the entire row.
-        </p>
-        <p>When equal widths aren’t what you want, you can add sizing classes to individual columns. Columns without sizing classes simply divide up the remaining space as normal.</p>
-        <p>The sizing class are set by breakpoint and the layout will change accordingly.</p>
-        <div class="layout">
-            <div class="layout__item">
-                <div class="block">Auto</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">Auto</div>
-            </div>
+    <header>
+        <div class="container">
+            <h1>Maat.css documentation</h1>
         </div>
-        <div class="layout">
-            <div class="layout__item layout__item--sm-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">Auto</div>
-            </div>
-            <div class="layout__item layout__item--sm-2">
-                <div class="block">2/12</div>
-            </div>
+    </header>
+    <section>
+        <div class="container">
+            <h1>Introduction</h1>
+            <p>The maat.css modules do not provide you with UI and design out of the box, instead, it provides you with a solid architectural baseline upon which to complete your own work. Every module can be replaced, ignored or extended so it doesn't limit you when new strategies or technologies arise.</p>
+            <h2>Features</h2>
+            <ol>
+                <li>BEM</li>
+                <li>Flexbox layouts</li>
+                <li>Custom breakpoints</li>
+                <li>Rem based font sizes</li>
+                <li>Basic form styling with custom checkboxes, radios and selects</li>
+                <li>Guidelines for your project structure (can be diverged from, this is not the holy grail)</li>
+            </ol>
+            <h2>Installation</h2>
+            <p>Add Maat.css package to your package.json.</p>
+            <pre><code class="bash">npm install @freshheads/maatcss</code></pre>
+
+            <h2>Usage</h2>
+
+            <p>Once you have maat.css in your project you first need to copy the example.main.scss file into your project directory structure and rename this to your application entry point.
+                This file accesses the maat.css modules, and you can extend it with your own UI component modules.</p>
+
+            <p>The imports in this file need to be changed to the location of the maatcss node module. e.g. <code>~maatcss/generic/toplevel</code> when using Webpack. For example:</p>
+            <pre><code>
+// Libs
+@import '~sass-mq';
+@import '~normalize.css';
+
+// Tools
+@import '~@freshheads/maatcss/tools/button-variant';
+@import '~@freshheads/maatcss/tools/fontello';
+
+// Generic
+@import '~@freshheads/maatcss/generic/reboot';
+@import '~@freshheads/maatcss/generic/toplevel';
+@import '~@freshheads/maatcss/generic/typography';
+
+// Layout
+@import '~@freshheads/maatcss/layout/container';
+@import '~@freshheads/maatcss/layout/layout';
+@import '~@freshheads/maatcss/layout/layout-sizing';
+@import '~@freshheads/maatcss/layout/layout-align';
+
+// Components
+@import '~@freshheads/maatcss/components/button';
+@import '~@freshheads/maatcss/components/form';
+@import '~@freshheads/maatcss/components/form-choice';
+@import '~@freshheads/maatcss/components/form-select';
+            </code></pre>
+
+            <h3>Directory structure guidelines</h3>
+
+            <p>Maat.css follows a specific directory structure, which you hopefully follow as well in your own CSS directory:</p>
+
+            <ul>
+                <li><strong>/settings</strong> Global variables, site-wide settings, transcending component settings.</li>
+                <li><strong>/tools</strong> Site-wide mixins and functions.</li>
+                <li><strong>/generic</strong> Low-specificity, far-reaching rulesets (e.g. resets, typography, wrappers).</li>
+                <li><strong>/layout</strong> Our own flexbox based grid.</li>
+                <li><strong>/components</strong> BEM minded, independent blocks of UI. A few essentials are provided e.g. forms and buttons.</li>
+                <li><strong>/utilities</strong> High-specificity, very explicit selectors. Overrides and helper classes. You can use tools to create them.</li>
+            </ul>
         </div>
-        <div class="layout">
-            <div class="layout__item layout__item--sm-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item layout__item--sm-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item layout__item--sm-6">
-                <div class="block">6/12</div>
-            </div>
-            <div class="layout__item layout__item--sm-6">
-                <div class="block">6/12</div>
-            </div>
-            <div class="layout__item layout__item--sm-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item layout__item--sm-3">
-                <div class="block">3/12</div>
-            </div>
+    </section>
+    <section>
+        <div class="container">
+            <h1>Typography</h1>
+            <p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
+
+            <h2>Header Level 2</h2>
+
+            <ol>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+            </ol>
+
+            <blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
+
+            <h3>Header Level 3</h3>
+
+            <ul>
+                <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
+                <li>Aliquam tincidunt mauris eu risus.</li>
+            </ul>
         </div>
-        <p>No gutter by setting <code>.layout--no-gutters</code></p>
-        <div class="layout layout--no-gutters">
-            <div class="layout__item">
-                <div class="block">Auto</div>
+    </section>
+    <section>
+        <div class="container">
+            <h1>Layout</h1>
+            <p>
+                The layout is based on flexbox which gives us a lot of nice features right out of the box.
+                The layout columns below with the text "auto" do not specify any widths, they just naturally space themselves equally and expand to fit the entire row.
+            </p>
+            <p>When equal widths aren’t what you want, you can add sizing classes to individual columns. Columns without sizing classes simply divide up the remaining space as normal.</p>
+            <p>The sizing class are set by breakpoint and the layout will change accordingly.</p>
+            <div class="layout">
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
             </div>
-            <div class="layout__item">
-                <div class="block">Auto</div>
+            <div class="layout">
+                <div class="layout__item layout__item--sm-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
+                <div class="layout__item layout__item--sm-2">
+                    <div class="block">2/12</div>
+                </div>
             </div>
-        </div>
-        <p>Columns can also have an offset by defining <code>.layout__item--offset-md-2</code></p>
-        <div class="layout">
-            <div class="layout__item layout__item--offset-md-2">
-                <div class="block">Auto</div>
+            <div class="layout">
+                <div class="layout__item layout__item--sm-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item layout__item--sm-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item layout__item--sm-6">
+                    <div class="block">6/12</div>
+                </div>
+                <div class="layout__item layout__item--sm-6">
+                    <div class="block">6/12</div>
+                </div>
+                <div class="layout__item layout__item--sm-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item layout__item--sm-3">
+                    <div class="block">3/12</div>
+                </div>
             </div>
-            <div class="layout__item">
-                <div class="block">Auto</div>
+            <p>No gutter by setting <code>.layout--no-gutters</code></p>
+            <div class="layout layout--no-gutters">
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
             </div>
-        </div>
-        <h3>Nested Layouts</h3>
-        <p>Layout components are infinitely nestable inside of other layout components.</p>
-        <div class="layout">
-            <div class="layout__item layout__item--lg-8">
-                <div class="block">
-                    <div class="layout">
-                        <div class="layout__item layout__item--md-4">
-                            <div class="block"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>
+            <p>Columns can also have an offset by defining <code>.layout__item--offset-md-2</code></p>
+            <div class="layout">
+                <div class="layout__item layout__item--offset-md-2">
+                    <div class="block">Auto</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">Auto</div>
+                </div>
+            </div>
+            <h3>Nested Layouts</h3>
+            <p>Layout components are infinitely nestable inside of other layout components.</p>
+            <div class="layout">
+                <div class="layout__item layout__item--lg-8">
+                    <div class="block">
+                        <div class="layout">
+                            <div class="layout__item layout__item--md-4">
+                                <div class="block"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p></div>
+                            </div>
+                            <div class="layout__item layout__item--md-8">
+                                <div class="block"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</p></div>
+                            </div>
                         </div>
-                        <div class="layout__item layout__item--md-8">
-                            <div class="block"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</p></div>
-                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="layout__item layout__item--flex layout__item--lg-4">
-                <div class="block"><h4>Sidebar</h4></div>
-            </div>
-        </div>
-
-        <h3>Prevent stacking on mobile</h3>
-        <p>By default columns are stacked on mobile if you wish to overwrite this set the class <code>.layout--no-wrap</code>. Or set a sizer on the xs class on the column you don't want to go full witdh.</p>
-        <div class="layout layout--no-wrap">
-            <div class="layout__item">
-                <div class="block">auto</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">auto</div>
-            </div>
-        </div>
-
-        <h3>Stretch columns to equal height</h3>
-        <p>You can make columns stretch to equal height by setting the class <code>.layout--item-flex</code> on the layout or per column by setting <code>.layout__item-flex</code>. This makes use of flexbox property where direct childs will be divided in rows</p>
-        <div class="layout layout--item-flex">
-            <div class="layout__item layout__item--lg-8">
-                <div class="block">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</p>
+                <div class="layout__item layout__item--flex layout__item--lg-4">
+                    <div class="block"><h4>Sidebar</h4></div>
                 </div>
             </div>
-            <div class="layout__item layout__item--lg-4">
-                <div class="block"><h4>Sidebar</h4></div>
-            </div>
-        </div>
 
-        <h3>Alignment</h3>
-        <p>Vertical alignment helpers, based on the complete layout. <code>.layout--align-x</code> eg. top, middle or bottom</p>
-        <div class="layout layout--align-middle">
-            <div class="layout__item">
-                <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</div>
+            <h3>Prevent stacking on mobile</h3>
+            <p>By default columns are stacked on mobile if you wish to overwrite this set the class <code>.layout--no-wrap</code>. Or set a sizer on the xs class on the column you don't want to go full witdh.</p>
+            <div class="layout layout--no-wrap">
+                <div class="layout__item">
+                    <div class="block">auto</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">auto</div>
+                </div>
             </div>
-            <div class="layout__item">
-                <div class="block">Middle</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde.</div>
-            </div>
-        </div>
-        <p>Vertical alignment helpers, defined per column. <code>.layout__item--align-x</code> eg. top, middle or bottom</p>
-        <div class="layout">
-            <div class="layout__item layout__item--align-top">
-                <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</div>
-            </div>
-            <div class="layout__item layout__item--align-middle">
-                <div class="block">Middle</div>
-            </div>
-            <div class="layout__item layout__item--align-bottom">
-                <div class="block">Bottom</div>
-            </div>
-        </div>
-        <p>Horizontal alignment helpers. <code>.layout--align-x</code> eg. center, right, between, around</p>
-        <div class="layout layout--align-center">
-            <div class="layout__item layout__item--xs-6">
-                <div class="block">center</div>
-            </div>
-        </div>
-        <div class="layout layout--align-right">
-            <div class="layout__item layout__item--xs-6">
-                <div class="block">right</div>
-            </div>
-        </div>
-        <div class="layout layout--align-between">
-            <div class="layout__item layout__item--xs-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item layout__item--xs-3">
-                <div class="block">3/12</div>
-            </div>
-        </div>
-        <div class="layout layout--align-around">
-            <div class="layout__item layout__item--xs-3">
-                <div class="block">3/12</div>
-            </div>
-            <div class="layout__item layout__item--xs-3">
-                <div class="block">3/12</div>
-            </div>
-        </div>
-        <h3>Ordering</h3>
-        <p>You can change the order of columns on a from a certain breakpoint by setting <code>.layout__item--order-md-x</code> eg. first, last. Or even reverse the complete layout by setting <code>.layout--order-lg-reverse</code></p>
-        <div class="layout">
-            <div class="layout__item">
-                <div class="block">1</div>
-            </div>
-            <div class="layout__item layout__item--order-md-first">
-                <div class="block">2</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">3</div>
-            </div>
-        </div>
-        <div class="layout layout--order-lg-reverse">
-            <div class="layout__item">
-                <div class="block">1</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">2</div>
-            </div>
-            <div class="layout__item">
-                <div class="block">3</div>
-            </div>
-        </div>
 
-        <h3>Shrink/grow</h3>
-        <p>You can set a grow and shrink modifier on layout items. To collapse these until a certain breakpoint use <code>.layout--collapse-sm</code></p>
-        <div class="layout layout--collapse-sm">
-            <div class="layout__item layout__item--grow">
-                <div class="block">Grow</div>
-            </div>
-            <div class="layout__item layout__item--shrink">
-                <div class="block">Shrink</div>
-            </div>
-        </div>
-
-        <h2>Tables</h2>
-        <table class="table table--striped">
-            <thead>
-                <tr>
-                    <th>Voornaam</th>
-                    <th>Achternaam</th>
-                    <th>Username</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Geert</td>
-                    <td>van de Langenberg</td>
-                    <td>@G33RT</td>
-                </tr>
-                <tr>
-                    <td>Martin</td>
-                    <td>Broos</td>
-                    <td>@martinbroos</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <h2>Notifications</h2>
-        <div class="notification notification--success" role="alert">
-            <span class="notification__content">
-                <strong>Well done!</strong> You successfully read this important alert message.
-            </span>
-            <button class="notification__close" aria-label="Notificatie sluiten" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="notification notification--info" role="alert">
-            <span class="notification__content">
-                <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
-            </span>
-            <button class="notification__close" aria-label="Notificatie sluiten" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="notification notification--warning" role="alert">
-            <span class="notification__content">
-                <strong>Warning!</strong> Better check yourself, you're not looking too good.
-            </span>
-            <button class="notification__close" aria-label="Notificatie sluiten" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="notification notification--danger" role="alert">
-            <span class="notification__content">
-                <strong>Oh snap!</strong> Change a few things up and try submitting again.
-            </span>
-            <button class="notification__close" aria-label="Notificatie sluiten" type="button">
-                <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-
-        <h2>Forms</h2>
-        <form>
-            <div class="form__group has-error">
-                <label for="input-email-example" class="form__label">Emailadres</label>
-                <input type="email" class="form__field" id="input-email-example" aria-describedby="email-help" placeholder="Vul je emailadres in">
-                <small id="email-help" class="form__text">We'll never share your email with anyone else.</small>
-            </div>
-            <div class="form__group">
-                <label for="select-example" class="form__label">Example select</label>
-                <select class="form__field" id="select-example">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form__group">
-                <label for="select-example-2" class="form__label">Custom select</label>
-                <select class="form-select" id="select-example-2">
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                    <option>4</option>
-                    <option>5</option>
-                </select>
-            </div>
-            <div class="form__group">
-                <label for="example-textarea" class="form__label">Example textarea</label>
-                <textarea class="form__field" id="example-textarea" rows="3"></textarea>
-            </div>
-            <div class="form__group">
-                <label for="example-input-file" class="form__label">File input</label>
-                <input type="file" class="form__file" id="example-input-file" aria-describedby="file-help">
-                <small id="file-help" class="form__text">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-            </div>
-            <fieldset>
-                <legend>Radio buttons</legend>
-                <div class="form__group form-choice-list">
-                    <div class="form-choice form-choice--radio">
-                        <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-1" value="option1" checked="">
-                        <label class="form-choice__label" for="option-radios-1">Option one is this and that—be sure to include why it's great</label>
-                    </div>
-                    <div class="form-choice form-choice--radio">
-                        <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-2" value="option1" checked="">
-                        <label class="form-choice__label" for="option-radios-2">Option two is this and that—be sure to include why it's great</label>
-                    </div>
-                    <div class="form-choice form-choice--radio">
-                        <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-3" value="option1" checked="">
-                        <label class="form-choice__label" for="option-radios-3">Option three is this and that—be sure to include why it's great</label>
+            <h3>Stretch columns to equal height</h3>
+            <p>You can make columns stretch to equal height by setting the class <code>.layout--item-flex</code> on the layout or per column by setting <code>.layout__item-flex</code>. This makes use of flexbox property where direct childs will be divided in rows</p>
+            <div class="layout layout--item-flex">
+                <div class="layout__item layout__item--lg-8">
+                    <div class="block">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</p>
                     </div>
                 </div>
-            </fieldset>
-            <fieldset>
-                <legend>Checkboxes</legend>
-                <div class="form__group form-choice-list">
-                    <div class="form-choice form-choice--checkbox">
-                        <input type="checkbox" class="form-choice__input" value="checkbox1" checked="" id="checkbox1">
-                        <label class="form-choice__label" for="checkbox1">Option one is this and that—be sure to include why it's great</label>
-                    </div>
-                    <div class="form-choice form-choice--checkbox">
-                        <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox2">
-                        <label class="form-choice__label" for="checkbox2">Option two is this and that—be sure to include why it's great</label>
-                    </div>
-                    <div class="form-choice form-choice--checkbox">
-                        <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox3">
-                        <label class="form-choice__label" for="checkbox3">Option three is this and that—be sure to include why it's great</label>
-                    </div>
+                <div class="layout__item layout__item--lg-4">
+                    <div class="block"><h4>Sidebar</h4></div>
                 </div>
-            </fieldset>
-            <fieldset>
-                <legend>Inline choices</legend>
-                <div class="form__group form-choice-list form-choice-list--inline">
-                    <div class="form-choice form-choice--radio">
-                        <input type="radio" class="form-choice__input" name="option-radios" id="option-inline-radios-1" value="option1" checked="">
-                        <label class="form-choice__label" for="option-inline-radios-1">Option one</label>
-                    </div>
-                    <div class="form-choice form-choice--radio">
-                        <input type="radio" class="form-choice__input" name="option-radios" id="option-inline-radios-2" value="option2" checked="">
-                        <label class="form-choice__label" for="option-inline-radios-2">Option two</label>
-                    </div>
+            </div>
+
+            <h3>Alignment</h3>
+            <p>Vertical alignment helpers, based on the complete layout. <code>.layout--align-x</code> eg. top, middle or bottom</p>
+            <div class="layout layout--align-middle">
+                <div class="layout__item">
+                    <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</div>
                 </div>
-            </fieldset>
-            <fieldset>
-                <legend>Error states</legend>
-                <div class="form__group form-choice-list has-error">
-                    <div class="form-choice form-choice--checkbox">
-                        <input type="checkbox" class="form-choice__input" value="checkbox4" id="checkbox4">
-                        <label class="form-choice__label" for="checkbox4">Option</label>
-                        <span class="form__error-message">This option must be checked</span>
-                    </div>
+                <div class="layout__item">
+                    <div class="block">Middle</div>
                 </div>
+                <div class="layout__item">
+                    <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde.</div>
+                </div>
+            </div>
+            <p>Vertical alignment helpers, defined per column. <code>.layout__item--align-x</code> eg. top, middle or bottom</p>
+            <div class="layout">
+                <div class="layout__item layout__item--align-top">
+                    <div class="block">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur cumque eum excepturi laudantium magnam provident qui ratione saepe totam unde. Est eum molestiae odit placeat quas rerum velit. Dignissimos, odit!</div>
+                </div>
+                <div class="layout__item layout__item--align-middle">
+                    <div class="block">Middle</div>
+                </div>
+                <div class="layout__item layout__item--align-bottom">
+                    <div class="block">Bottom</div>
+                </div>
+            </div>
+            <p>Horizontal alignment helpers. <code>.layout--align-x</code> eg. center, right, between, around</p>
+            <div class="layout layout--align-center">
+                <div class="layout__item layout__item--xs-6">
+                    <div class="block">center</div>
+                </div>
+            </div>
+            <div class="layout layout--align-right">
+                <div class="layout__item layout__item--xs-6">
+                    <div class="block">right</div>
+                </div>
+            </div>
+            <div class="layout layout--align-between">
+                <div class="layout__item layout__item--xs-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item layout__item--xs-3">
+                    <div class="block">3/12</div>
+                </div>
+            </div>
+            <div class="layout layout--align-around">
+                <div class="layout__item layout__item--xs-3">
+                    <div class="block">3/12</div>
+                </div>
+                <div class="layout__item layout__item--xs-3">
+                    <div class="block">3/12</div>
+                </div>
+            </div>
+            <h3>Ordering</h3>
+            <p>You can change the order of columns on a from a certain breakpoint by setting <code>.layout__item--order-md-x</code> eg. first, last. Or even reverse the complete layout by setting <code>.layout--order-lg-reverse</code></p>
+            <div class="layout">
+                <div class="layout__item">
+                    <div class="block">1</div>
+                </div>
+                <div class="layout__item layout__item--order-md-first">
+                    <div class="block">2</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">3</div>
+                </div>
+            </div>
+            <div class="layout layout--order-lg-reverse">
+                <div class="layout__item">
+                    <div class="block">1</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">2</div>
+                </div>
+                <div class="layout__item">
+                    <div class="block">3</div>
+                </div>
+            </div>
+
+            <h3>Shrink/grow</h3>
+            <p>You can set a grow and shrink modifier on layout items. To collapse these until a certain breakpoint use <code>.layout--collapse-sm</code></p>
+            <div class="layout layout--collapse-sm">
+                <div class="layout__item layout__item--grow">
+                    <div class="block">Grow</div>
+                </div>
+                <div class="layout__item layout__item--shrink">
+                    <div class="block">Shrink</div>
+                </div>
+            </div>
+
+            <h2>Tables</h2>
+            <table class="table table--striped">
+                <thead>
+                    <tr>
+                        <th>Voornaam</th>
+                        <th>Achternaam</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Geert</td>
+                        <td>van de Langenberg</td>
+                        <td>@G33RT</td>
+                    </tr>
+                    <tr>
+                        <td>Martin</td>
+                        <td>Broos</td>
+                        <td>@martinbroos</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h1>Notifications</h1>
+            <div class="notification notification--success" role="alert">
+                <span class="notification__content">
+                    <strong>Well done!</strong> You successfully read this important alert message.
+                </span>
+                <button class="notification__close" aria-label="Notificatie sluiten" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="notification notification--info" role="alert">
+                <span class="notification__content">
+                    <strong>Heads up!</strong> This alert needs your attention, but it's not super important.
+                </span>
+                <button class="notification__close" aria-label="Notificatie sluiten" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="notification notification--warning" role="alert">
+                <span class="notification__content">
+                    <strong>Warning!</strong> Better check yourself, you're not looking too good.
+                </span>
+                <button class="notification__close" aria-label="Notificatie sluiten" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="notification notification--danger" role="alert">
+                <span class="notification__content">
+                    <strong>Oh snap!</strong> Change a few things up and try submitting again.
+                </span>
+                <button class="notification__close" aria-label="Notificatie sluiten" type="button">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h1>Forms</h1>
+            <form>
                 <div class="form__group has-error">
-                    <label for="input-email-example2" class="form__label">Emailadres</label>
-                    <input type="email" class="form__field" id="input-email-example2" aria-describedby="email-help2" placeholder="Vul je emailadres in">
-                    <small id="email-help2" class="form__text">We'll never share your email with anyone else.</small>
-                    <span class="form__error-message">This field must contain a valid email address</span>
+                    <label for="input-email-example" class="form__label">Emailadres</label>
+                    <input type="email" class="form-field" id="input-email-example" aria-describedby="email-help" placeholder="Vul je emailadres in">
+                    <small id="email-help" class="form__text">We'll never share your email with anyone else.</small>
                 </div>
-            </fieldset>
-        </form>
+                <div class="form__group">
+                    <label for="select-example" class="form__label">Example select</label>
+                    <select class="form-field" id="select-example">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="select-example-2" class="form__label">Custom select</label>
+                    <select class="form-select" id="select-example-2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div>
+                <div class="form__group">
+                    <label for="example-textarea" class="form__label">Example textarea</label>
+                    <textarea class="form-field" id="example-textarea" rows="3"></textarea>
+                </div>
+                <div class="form__group">
+                    <label for="example-input-file" class="form__label">File input</label>
+                    <input type="file" class="form__file" id="example-input-file" aria-describedby="file-help">
+                    <small id="file-help" class="form__text">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
+                </div>
+                <fieldset>
+                    <legend>Radio buttons</legend>
+                    <div class="form__group form-choice-list">
+                        <div class="form-choice form-choice--radio">
+                            <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-1" value="option1" checked="">
+                            <label class="form-choice__label" for="option-radios-1">Option one is this and that—be sure to include why it's great</label>
+                        </div>
+                        <div class="form-choice form-choice--radio">
+                            <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-2" value="option1" checked="">
+                            <label class="form-choice__label" for="option-radios-2">Option two is this and that—be sure to include why it's great</label>
+                        </div>
+                        <div class="form-choice form-choice--radio">
+                            <input type="radio" class="form-choice__input" name="option-radios" id="option-radios-3" value="option1" checked="">
+                            <label class="form-choice__label" for="option-radios-3">Option three is this and that—be sure to include why it's great</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Checkboxes</legend>
+                    <div class="form__group form-choice-list">
+                        <div class="form-choice form-choice--checkbox">
+                            <input type="checkbox" class="form-choice__input" value="checkbox1" checked="" id="checkbox1">
+                            <label class="form-choice__label" for="checkbox1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam asperiores consequatur ducimus exercitationem, illum iste laborum laudantium minus nemo neque nulla obcaecati optio praesentium quibusdam sequi soluta tempora, tenetur voluptatibus!</label>
+                        </div>
+                        <div class="form-choice form-choice--checkbox">
+                            <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox2">
+                            <label class="form-choice__label" for="checkbox2">Option two is this and that—be sure to include why it's great</label>
+                        </div>
+                        <div class="form-choice form-choice--checkbox">
+                            <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox3">
+                            <label class="form-choice__label" for="checkbox3">Option three is this and that—be sure to include why it's great</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Inline choices</legend>
+                    <div class="form__group form-choice-list form-choice-list--inline">
+                        <div class="form-choice form-choice--radio">
+                            <input type="radio" class="form-choice__input" name="option-radios" id="option-inline-radios-1" value="option1" checked="">
+                            <label class="form-choice__label" for="option-inline-radios-1">Option one</label>
+                        </div>
+                        <div class="form-choice form-choice--radio">
+                            <input type="radio" class="form-choice__input" name="option-radios" id="option-inline-radios-2" value="option2" checked="">
+                            <label class="form-choice__label" for="option-inline-radios-2">Option two</label>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Error states</legend>
+                    <div class="form__group form-choice-list has-error">
+                        <div class="form-choice form-choice--checkbox">
+                            <input type="checkbox" class="form-choice__input" value="checkbox4" id="checkbox4">
+                            <label class="form-choice__label" for="checkbox4">Option</label>
+                            <span class="form__error-message">This option must be checked</span>
+                        </div>
+                    </div>
+                    <div class="form__group has-error">
+                        <label for="input-email-example2" class="form__label">Emailadres</label>
+                        <input type="email" class="form-field" id="input-email-example2" aria-describedby="email-help2" placeholder="Vul je emailadres in">
+                        <small id="email-help2" class="form__text">We'll never share your email with anyone else.</small>
+                        <span class="form__error-message">This field must contain a valid email address</span>
+                    </div>
+                </fieldset>
+            </form>
 
-        <h3>Inline forms</h3>
-        <form class="form--inline">
-            <label class="form__label" for="inline-form-custom-select">Preference</label>
-            <select id="inline-form-custom-select" class="form-select">
-                <option selected>Choose...</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <div class="form-choice form-choice--checkbox">
-                <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox-inline">
-                <label class="form-choice__label" for="checkbox-inline">Custom checkbox</label>
-            </div>
-            <div class="form-choice form-choice--checkbox">
-                <input type="checkbox" class="form-choice__input" value="checkbox2" id="checkbox-inline-2">
-                <label class="form-choice__label" for="checkbox-inline-2">Custom checkbox</label>
-            </div>
-            <button type="submit" class="button">Submit</button>
-        </form>
-
-        <h3>Buttons</h3>
-        <a href="#" class="button">Button</a>
-    </div>
+            <h3>Inline forms</h3>
+            <form class="form--inline">
+                <label class="form__label" for="inline-form-custom-select">Preference</label>
+                <select id="inline-form-custom-select" class="form-select">
+                    <option selected>Choose...</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+                <div class="form-choice form-choice--checkbox">
+                    <input type="checkbox" class="form-choice__input" value="checkbox1" id="checkbox-inline">
+                    <label class="form-choice__label" for="checkbox-inline">Custom checkbox</label>
+                </div>
+                <div class="form-choice form-choice--checkbox">
+                    <input type="checkbox" class="form-choice__input" value="checkbox2" id="checkbox-inline-2">
+                    <label class="form-choice__label" for="checkbox-inline-2">Custom checkbox</label>
+                </div>
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <h1>Buttons</h1>
+            <a href="#" class="button">Button</a>
+        </div>
+    </section>
 <script type="text/javascript" src="app.js"></script></body>
 </html>
