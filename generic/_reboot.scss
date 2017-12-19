@@ -66,6 +66,7 @@ blockquote {
 
 a {
     color: $link-color;
+    fill: $link-color;
     text-decoration: $link-decoration;
 }
 
@@ -114,6 +115,7 @@ caption {
     padding-top: 12px;
     padding-bottom: 12px;
     color: #636c72;
+    fill: #636c72;
     text-align: left;
     caption-side: bottom;
 }

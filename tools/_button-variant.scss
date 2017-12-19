@@ -1,5 +1,6 @@
 @mixin button-variant($color, $background, $hoverColor: null, $hoverBackground: null) {
     color: $color;
+    fill: $color;
     background-color: $background;
 
     @if ($hoverColor == null) {
@@ -13,6 +14,7 @@
     &:hover,
     &:focus {
         color: $hoverColor;
+        fill: $hoverColor;
         background-color: $hoverBackground;
     }
 }
