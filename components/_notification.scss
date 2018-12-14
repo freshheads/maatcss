@@ -42,7 +42,8 @@ $notification-danger-color:                 #a94442 !default;
     color: $notification-warning-color;
 }
 
-.notification--danger {
+.notification--danger,
+.notification--error {
     border-color: $notification-danger-border-color;
     background-color: $notification-danger-background-color;
     color: $notification-danger-color;
