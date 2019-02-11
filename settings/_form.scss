@@ -12,6 +12,7 @@ $form-field-placeholder-color:      $form-text-muted !default;
 $form-field-padding:                0.625rem 0.75rem !default;
 $form-field-font-family:            inherit !default;
 $form-field-font-weight:            inherit !default;
+$form-field-letter-spacing:         inherit !default;
 
 $form-choice-bg-color:              #0275d8 !default;
 $form-choice-border-color:          $form-field-border-color !default;
@@ -30,3 +31,4 @@ $form-select-bg-color:              $form-field-bg-color !default;
 $form-select-color:                 $form-field-color !default;
 $form-select-padding:               0.625rem 2.25rem 0.625rem 0.75rem !default;
 $form-select-font-family:           inherit !default;
+$form-select-letter-spacing:        inherit !default;
