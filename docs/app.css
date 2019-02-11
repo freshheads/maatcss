@@ -438,6 +438,7 @@ blockquote {
 
 a {
   color: #f00;
+  fill: #f00;
   text-decoration: underline; }
 
 a:not([href]):not([tabindex]) {
@@ -478,6 +479,7 @@ caption {
   padding-top: 12px;
   padding-bottom: 12px;
   color: #636c72;
+  fill: #636c72;
   text-align: left;
   caption-side: bottom; }
 
@@ -543,6 +545,7 @@ html {
 body {
   background-color: #fff;
   color: #333;
+  fill: #333;
   font-size: 1rem;
   font-weight: 400; }
 
@@ -561,7 +564,8 @@ h6 {
   font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif;
   font-weight: 700;
   line-height: 1.25;
-  color: inherit; }
+  color: inherit;
+  fill: inherit; }
 
 h1 {
   font-size: 2.25rem; }
@@ -1329,7 +1333,8 @@ h6 {
   background-color: #fcf8e3;
   color: #8a6d3b; }
 
-.notification--danger {
+.notification--danger,
+.notification--error {
   border-color: #ebcccc;
   background-color: #f2dede;
   color: #a94442; }
