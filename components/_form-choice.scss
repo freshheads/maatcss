@@ -63,6 +63,7 @@
     opacity: 0;
 
     &:checked ~ .form-choice__label:before {
+        border-color: $form-choice-bg-color;
         background-color: $form-choice-bg-color;
         color: $form-choice-icon-color;
     }
