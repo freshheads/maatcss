@@ -1444,6 +1444,7 @@ input[type='radio']:disabled {
   font-size: 1rem;
   font-weight: inherit;
   line-height: 1.5;
+  letter-spacing: inherit;
   color: #464a4c;
   transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s; }
   .form-field:focus {
@@ -1531,6 +1532,7 @@ input[type='radio']:disabled {
   margin: 0.25rem 0.5rem 0 -1.25rem;
   opacity: 0; }
   .form-choice__input:checked ~ .form-choice__label:before {
+    border-color: #0275d8;
     background-color: #0275d8;
     color: #fff; }
   .form-choice__input:focus ~ .form-choice__label:before {
@@ -1566,6 +1568,7 @@ input[type='radio']:disabled {
   background-color: #fff;
   font-family: inherit;
   line-height: 1.5;
+  letter-spacing: inherit;
   color: #464a4c;
   -webkit-appearance: none;
   -moz-appearance: none;
