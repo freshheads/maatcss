@@ -23,20 +23,22 @@
 
 .form-choice__label {
     position: relative;
-    display: inline-flex;
+    display: inline-block;
     min-height: 1.5rem;
     margin-bottom: 0;
+    padding-left: 1.5rem;
     font-family: $form-choice-font-family;
     cursor: pointer;
 
     &:before {
         content: '';
+        position: absolute;
+        top: 3px;
+        left: 0;
         display: block;
         box-sizing: content-box;
-        flex: 1 0 1rem;
         width: $form-choice-size;
         height: $form-choice-size;
-        margin-top: 0.3rem;
         margin-right: 0.5rem;
         border: 1px solid $form-choice-border-color;
         background-repeat: no-repeat;
