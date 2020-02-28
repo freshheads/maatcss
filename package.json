@@ -34,7 +34,7 @@
     "homepage": "https://freshheads.github.io/maatcss-docs/",
     "dependencies": {
         "normalize.css": "^7.0.0",
-        "sass-mq": "^3.3.2",
+        "sass-mq": "^5.0.1",
         "sass-svg-uri": "^1.0.0"
     },
     "devDependencies": {
