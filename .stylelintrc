@@ -1,91 +1,217 @@
 {
-  "extends": "stylelint-config-standard",
-  "plugins": [
-    "stylelint-order"
-  ],
-  "rules": {
-    "at-rule-empty-line-before": ["always", {
-      "except": ["first-nested", "blockless-after-blockless"],
-      "ignore": ["after-comment"]
-    }],
-    "at-rule-name-space-after": "always",
-    "at-rule-no-unknown": [true, {
-      "ignoreAtRules": ["each", "error", "extend", "for", "if", "else", "elseif", "include", "mixin", "warn", "content", "at-root", "function", "return"]
-    }],
-    "block-closing-brace-newline-before": "always",
-    "block-no-empty": true,
-    "block-opening-brace-newline-after": "always",
-    "block-opening-brace-newline-before": "always-single-line",
-    "color-named": "never",
-    "custom-property-empty-line-before": "never",
-    "declaration-block-no-duplicate-properties": [true, {
-      "ignore": ["consecutive-duplicates"]
-    }],
-    "declaration-block-semicolon-newline-after": "always",
-    "declaration-block-semicolon-newline-before": "never-multi-line",
-    "declaration-colon-newline-after": null,
-    "declaration-colon-space-after": "always",
-    "declaration-empty-line-before": "never",
-    "font-family-name-quotes": "always-unless-keyword",
-    "function-parentheses-newline-inside": "never-multi-line",
-    "function-url-quotes": "always",
-    "indentation": null,
-    "max-nesting-depth": 4,
-    "media-query-list-comma-newline-after": "never-multi-line",
-    "media-query-list-comma-newline-before": "never-multi-line",
-    "media-query-list-comma-space-after": "always",
-    "no-duplicate-selectors": true,
-    "number-max-precision": 3,
-    "order/properties-order": [
-      [
-        "content",
-        "position",
-        "z-index",
-        {
-          "order": "flexible",
-          "properties": ["top", "right", "bottom", "left"]
-        },
-        "display",
-        "float",
-        "clear",
-        "box-sizing",
-        {
-          "order": "flexible",
-          "properties": ["flex", "order", "justify-content", "align-items", "align-content", "align-self"]
-        },
-        {
-          "order": "flexible",
-          "properties": ["table", "vertical-align"]
-        },
-        "width", "min-width", "max-width",
-        "height", "min-height", "max-height",
-        {
-          "order": "flexible",
-          "properties": ["padding", "margin"]
-        },
-        "border",
-        "overflow",
-        "transform"
-      ],
-      {
-        "unspecified": "bottom"
-      }
-    ],
-    "rule-empty-line-before": ["always", {
-      "except": ["first-nested"],
-      "ignore": ["after-comment"]
-    }],
-    "selector-attribute-quotes": "always",
-    "selector-list-comma-newline-before": "never-multi-line",
-    "selector-list-comma-space-after": "always-single-line",
-    "selector-max-compound-selectors": 4,
-    "selector-max-specificity": "0,4,2",
-    "selector-pseudo-element-colon-notation": "single",
-    "string-quotes": "single",
-    "value-keyword-case": ["lower", {
-      "ignoreKeywords": ["/(rotate|scale|skew|translate)(X|Y|Z)(.*)/"]
-    }],
-    "value-list-comma-newline-after": "always-multi-line",
-    "value-list-comma-newline-before": "never-multi-line"
-  }
+    "extends": "stylelint-config-standard",
+    "plugins": ["stylelint-order"],
+    "rules": {
+        "at-rule-empty-line-before": [
+            "always",
+            {
+                "except": ["first-nested", "blockless-after-blockless"],
+                "ignore": ["after-comment"],
+                "ignoreAtRules": ["if", "else"]
+            }
+        ],
+        "at-rule-name-space-after": "always",
+        "at-rule-no-unknown": [
+            true,
+            {
+                "ignoreAtRules": [
+                    "each",
+                    "error",
+                    "extend",
+                    "for",
+                    "if",
+                    "else",
+                    "include",
+                    "mixin",
+                    "warn",
+                    "content",
+                    "at-root"
+                ]
+            }
+        ],
+        "block-closing-brace-newline-before": "always",
+        "block-no-empty": true,
+        "block-closing-brace-newline-after": [
+            "always",
+            {
+                "ignoreAtRules": ["if", "else"]
+            }
+        ],
+        "block-opening-brace-newline-before": "always-single-line",
+        "color-named": "never",
+        "custom-property-empty-line-before": "never",
+        "declaration-block-no-duplicate-properties": [
+            true,
+            {
+                "ignore": ["consecutive-duplicates"]
+            }
+        ],
+        "declaration-block-semicolon-newline-after": "always",
+        "declaration-block-semicolon-newline-before": "never-multi-line",
+        "declaration-colon-newline-after": null,
+        "declaration-colon-space-after": "always",
+        "declaration-empty-line-before": "never",
+        "font-family-name-quotes": "always-unless-keyword",
+        "function-parentheses-newline-inside": "never-multi-line",
+        "function-url-quotes": "always",
+        "indentation": null,
+        "max-nesting-depth": 4,
+        "media-query-list-comma-newline-after": "never-multi-line",
+        "media-query-list-comma-newline-before": "never-multi-line",
+        "media-query-list-comma-space-after": "always",
+        "no-duplicate-selectors": true,
+        "no-descending-specificity": null,
+        "number-max-precision": 3,
+        "order/properties-order": [
+            [
+                "content",
+                "position",
+                "z-index",
+                {
+                    "order": "flexible",
+                    "properties": ["top", "right", "bottom", "left"]
+                },
+                "display",
+                "float",
+                "clear",
+                "box-sizing",
+                {
+                    "order": "flexible",
+                    "properties": [
+                        "grid",
+                        "grid-template",
+                        "grid-template-rows",
+                        "grid-template-columns",
+                        "grid-template-areas",
+                        "grid-auto-columns",
+                        "grid-auto-rows",
+                        "grid-auto-flow",
+                        "grid-row",
+                        "grid-column",
+                        "grid-area",
+                        "grid-gap",
+                        "grid-row-gap",
+                        "grid-column-gap",
+                        "grid-row-start",
+                        "grid-row-end",
+                        "grid-column-start",
+                        "grid-column-end"
+                    ]
+                },
+                {
+                    "order": "flexible",
+                    "properties": [
+                        "flex",
+                        "flex-grow",
+                        "flex-shrink",
+                        "flex-basis",
+                        "flex-flow",
+                        "flex-direction",
+                        "flex-wrap",
+                        "order",
+                        "justify-items",
+                        "justify-content",
+                        "justify-self",
+                        "align-items",
+                        "align-content",
+                        "align-self"
+                    ]
+                },
+                {
+                    "order": "flexible",
+                    "properties": ["table-layout", "vertical-align"]
+                },
+                "width",
+                "min-width",
+                "max-width",
+                "height",
+                "min-height",
+                "max-height",
+                {
+                    "order": "flexible",
+                    "properties": [
+                        "padding",
+                        "padding-top",
+                        "padding-right",
+                        "padding-bottom",
+                        "padding-left",
+                        "margin",
+                        "margin-top",
+                        "margin-right",
+                        "margin-bottom",
+                        "margin-left"
+                    ]
+                },
+                {
+                    "order": "flexible",
+                    "properties": [
+                        "border",
+                        "border-width",
+                        "border-style",
+                        "border-color",
+                        "border-top",
+                        "border-top-width",
+                        "border-top-style",
+                        "border-top-color",
+                        "border-right",
+                        "border-right-width",
+                        "border-right-style",
+                        "border-right-color",
+                        "border-bottom",
+                        "border-bottom-width",
+                        "border-bottom-style",
+                        "border-bottom-color",
+                        "border-left",
+                        "border-left-width",
+                        "border-left-style",
+                        "border-left-color",
+                        "border-radius",
+                        "border-top-left-radius",
+                        "border-top-right-radius",
+                        "border-bottom-right-radius",
+                        "border-bottom-left-radius"
+                    ]
+                },
+                {
+                    "order": "flexible",
+                    "properties": [
+                        "outline",
+                        "outline-width",
+                        "outline-style",
+                        "outline-color"
+                    ]
+                },
+                {
+                    "order": "flexible",
+                    "properties": ["overflow", "overflow-x", "overflow-y"]
+                },
+                "transform"
+            ],
+            {
+                "unspecified": "bottom"
+            }
+        ],
+        "rule-empty-line-before": [
+            "always",
+            {
+                "except": ["first-nested"],
+                "ignore": ["after-comment"]
+            }
+        ],
+        "selector-attribute-quotes": "always",
+        "selector-list-comma-newline-before": "never-multi-line",
+        "selector-list-comma-space-after": "always-single-line",
+        "selector-max-compound-selectors": 4,
+        "selector-max-specificity": "0,4,2",
+        "selector-pseudo-element-colon-notation": "single",
+        "string-quotes": "single",
+        "value-keyword-case": [
+            "lower",
+            {
+                "ignoreKeywords": ["/(rotate|scale|skew|translate)(X|Y|Z)(.*)/"]
+            }
+        ],
+        "value-list-comma-newline-after": "always-multi-line",
+        "value-list-comma-newline-before": "never-multi-line"
+    }
 }
