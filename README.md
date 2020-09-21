@@ -47,7 +47,7 @@ Maat.css follows a specific directory structure, which you hopefully follow as w
 
 ## Development 
 
-Start a local server using webpack >=2 and webpack-dev-server
+Start a local server using webpack >=4 and webpack-dev-server
 
 ```
 npm install
