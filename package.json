@@ -1,15 +1,16 @@
 {
     "name": "@freshheads/maatcss",
     "description": "Extensible, scalable, Sass-based modules that can be used as starting point for UI projects",
+    "version": "1.0.3",
     "engines": {
-        "node": ">=6.0.0",
-        "npm": ">=5.0.0"
+        "node": ">=12.13.0",
+        "npm": ">=6.0.0"
     },
     "main": "example.main.scss",
     "scripts": {
         "test": "npm run lint",
         "lint": "./node_modules/.bin/stylelint \"**/*.scss\" --syntax scss",
-        "docs": "webpack --progress --config webpack.config.js",
+        "docs": "webpack --progress --config webpack.config.js --mode production",
         "start": "webpack-dev-server",
         "preversion": "npm run docs"
     },
@@ -56,6 +57,5 @@
         "webpack": "^4.44.2",
         "webpack-cli": "^3.3.12",
         "webpack-dev-server": "^3.11.0"
-    },
-    "version": "1.0.3"
+    }
 }
