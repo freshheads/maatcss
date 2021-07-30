@@ -1,4 +1,5 @@
 @import '../settings/form';
+@import '~sass-svg-uri/svg-uri';
 
 .form-select {
     display: block;
@@ -46,7 +47,7 @@
     .has-error & {
         padding-right: 2.25rem;
         border-color: $form-group-error-color;
-        background-image: url('data:image/svg+xml;utf8,#{$form-group-error-icon}');
+        background-image: svg-uri($form-group-error-icon);
         background-repeat: no-repeat;
         background-position: center right 0.563rem;
         background-size: 1.125rem 1.125rem;
