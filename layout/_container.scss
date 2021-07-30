@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../settings/breakpoints';
 @import '../settings/layout';
 
@@ -19,7 +20,7 @@
 // Except for if the container is 0px and if the container is larger than the max-width set in the settings.
 // Or when the container is fluid
 @each $breakpoint-name, $container-width in $breakpoints {
-    @if ($container-width != 0px and ($container-width/1px) <= ($layout-container-max-width/1px)) { /* stylelint-disable-line */
+    @if ($container-width != 0px and (math.div($container-width,1px)) <= (math.div($layout-container-max-width, 1px))) { /* stylelint-disable-line */
         @include mq($from: $breakpoint-name) {
             .container:not(.container--fluid) {
                 max-width: $container-width;

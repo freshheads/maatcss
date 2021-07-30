@@ -1,11 +1,12 @@
+@use 'sass:math';
 @import '../settings/breakpoints';
 @import '../settings/layout';
 
 @mixin _make-column($totalColumnCount) {
     @for $i from 1 through $totalColumnCount {
         &-#{$i} {
-            width: percentage($i / $totalColumnCount);
-            max-width: percentage($i / $totalColumnCount); // Needed for IE10+ and Firefox
+            width: percentage(math.div($i, $totalColumnCount));
+            max-width: percentage(math.div($i, $totalColumnCount)); // Needed for IE10+ and Firefox
         }
     }
 }

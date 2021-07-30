@@ -1,3 +1,4 @@
+@use 'sass:math';
 @import '../settings/breakpoints';
 @import '../settings/layout';
 
@@ -8,8 +9,8 @@
     // compensate gutters for each breakpoint
     @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
         @include mq($from: $breakpoint-name) {
-            margin-left: -$gutter-width / 2;
-            margin-right: -$gutter-width / 2;
+            margin-left: math.div($gutter-width, 2) * -1;
+            margin-right: math.div($gutter-width, 2) * -1;
         }
     }
 }
@@ -35,8 +36,8 @@
     // set gutter width for each breakpoint
     @each $breakpoint-name, $gutter-width in $layout-gutter-widths {
         @include mq($from: $breakpoint-name) {
-            padding-left: $gutter-width / 2;
-            padding-right: $gutter-width / 2;
+            padding-left: math.div($gutter-width, 2);
+            padding-right: math.div($gutter-width, 2);
         }
     }
 
