@@ -1,10 +1,11 @@
+@use 'sass:math';
 @import '../settings/breakpoints';
 @import '../settings/layout';
 
 @mixin _make-offset($totalColumnCount) {
     @for $i from 1 through $totalColumnCount {
         &-#{$i} {
-            margin-left: percentage($i / $totalColumnCount);
+            margin-left: percentage(math.div($i, $totalColumnCount));
         }
     }
 }

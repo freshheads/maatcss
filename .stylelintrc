@@ -25,7 +25,9 @@
                     "mixin",
                     "warn",
                     "content",
-                    "at-root"
+                    "at-root", 
+                    "use", 
+                    "forward"
                 ]
             }
         ],
