@@ -1,7 +1,7 @@
 {
     "name": "@freshheads/maatcss",
     "description": "Extensible, scalable, Sass-based modules that can be used as starting point for UI projects",
-    "version": "1.1.0",
+    "version": "2.0.0-beta.0",
     "engines": {
         "node": ">=12.13.0",
         "npm": ">=6.0.0"
