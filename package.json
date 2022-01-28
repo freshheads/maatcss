@@ -35,8 +35,10 @@
     "homepage": "https://freshheads.github.io/maatcss-docs/",
     "dependencies": {
         "normalize.css": "^7.0.0",
-        "sass-mq": "^6.0.0-beta.1",
         "sass-svg-uri": "^1.0.0"
+    },
+    "peerDependencies": {
+        "sass-mq": "^6.0.0"
     },
     "devDependencies": {
         "autoprefixer": "^10.3.5",
