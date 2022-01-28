@@ -1,3 +1,4 @@
+// @deprecated - use svg solution instead
 @mixin fontello($charcode, $includeMargin: true) {
     content: $charcode;
     display: inline-block;
