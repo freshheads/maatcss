@@ -40,6 +40,7 @@
         "sass-mq": "^6.0.0"
     },
     "devDependencies": {
+        "sass-mq": "^6.0.0",
         "autoprefixer": "^10.3.5",
         "css-loader": "^4.3.0",
         "highlight.js": "^10.7.3",
